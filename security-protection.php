@@ -3,7 +3,7 @@
 Plugin Name: Security-protection
 Plugin URI: http://wordpress.org/plugins/security-protection/
 Description: Protection from login, register and reset-password brute-force attacks.
-Version: 1.0
+Version: 1.1
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -13,6 +13,9 @@ License: GPLv3
 $securityprotection_send_brute_force_log_to_admin = false; // if true, than info about blocked brute-force attacks will be sent to admin email
 
 $securityprotection_login_cookie_check = true; // if true, than cookie will be set on login screen
+
+
+include( 'security-protection-functions.php' );
 
 
 if ( ! function_exists( 'securityprotection_hooks' ) ) :
@@ -28,9 +31,9 @@ if ( ! function_exists( 'securityprotection_hooks' ) ) :
 	function securityprotection_set_login_cookie() {
 		global $securityprotection_login_cookie_check;
 		if( $securityprotection_login_cookie_check ) {
-			if( strtoupper( $_SERVER['REQUEST_METHOD']) == 'GET' and !isset( $_COOKIE['secprot_cookie'] ) ) {
-				setcookie( 'secprot_cookie', '1', time()+60*60*24 );
-				$_COOKIE['secprot_cookie'] = '1';
+			if( strtoupper( $_SERVER['REQUEST_METHOD']) == 'GET' and !isset( $_COOKIE['wordpress_secprot_cookie'] ) ) {
+				setcookie( 'wordpress_secprot_cookie', '1', time()+60*60*24*30, COOKIEPATH, COOKIE_DOMAIN ); // set cookie for a month
+				$_COOKIE['wordpress_secprot_cookie'] = '1';
 			}
 		}
 	}
@@ -40,7 +43,7 @@ if ( ! function_exists( 'securityprotection_hooks' ) ) :
 		global $securityprotection_send_brute_force_log_to_admin, $securityprotection_login_cookie_check;
 
 		if( $securityprotection_login_cookie_check ) {
-			if( strtoupper( $_SERVER['REQUEST_METHOD'] ) == 'POST' and !isset( $_COOKIE['secprot_cookie'] ) ) {
+			if( strtoupper( $_SERVER['REQUEST_METHOD'] ) == 'POST' and !isset( $_COOKIE['wordpress_secprot_cookie'] ) ) {
 
 				if ( $securityprotection_send_brute_force_log_to_admin ) { // if sending email to admin is enabled
 					$securityprotection_admin_email = get_option('admin_email');  // admin email
@@ -57,7 +60,8 @@ if ( ! function_exists( 'securityprotection_hooks' ) ) :
 					$securityprotection_message_brute_force_info .= 'IP : ' . $ip . "\r\n";
 
 					$securityprotection_message_brute_force_info .= 'HTTP_USER_AGENT : ' . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
-					$securityprotection_message_brute_force_info .= 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER'] . "\r\n";
+					$securityprotection_message_brute_force_info .= 'REQUEST_URI : ' . $_SERVER['REQUEST_URI'] . "\r\n";
+					$securityprotection_message_brute_force_info .= 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER'] . "\r\n\r\n";
 					//$securityprotection_message_brute_force_info .= 'SERVER_PROTOCOL : ' . $_SERVER['SERVER_PROTOCOL'] . "\r\n";
 					//$securityprotection_message_brute_force_info .= 'REDIRECT_STATUS : ' . $_SERVER['REDIRECT_STATUS'] . "\r\n\r\n";
 
@@ -104,18 +108,17 @@ if ( ! function_exists( 'securityprotection_hooks' ) ) :
 
 				}
 
-				securityprotection_exit();
+				// many brute-force attacks are waiting for redirect or WordPress login cookies
+				// if we will fake redirect and login cookies than many brute-forcers will stop their attacks
+
+				securityprotection_set_fake_login_cookies(); // set fake login cookies
+
+				securityprotection_fake_redirect(); // fake admin dashboard redirect
+
 			}
+
 		}
 
-	}
-
-
-	function securityprotection_exit() {
-		//header("HTTP/1.0 403 Forbidden"); // correct redirect
-		$redirect_to = admin_url();
-		wp_safe_redirect($redirect_to); // redirect the brute-force bot to admin section to emulate that the password is cracked and some brute-forcers stop their attacks after such redirect :)
-		exit();
 	}
 
 endif; // end of securityprotection_hooks()

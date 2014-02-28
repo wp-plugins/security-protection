@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: brute-force, bruteforce, login, register, reset-password, security, protection, protector, protect, block, bot, defender, guardian
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -15,7 +15,12 @@ Protection from login, register and reset-password brute-force attacks.
 [Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page") |
 [Donate](http://web-profile.com.ua/donate/ "Support the development")
 
-Important: delete username 'admin' if you have it on your site. More than 90% of brute-force attacks try to crack the 'admin' username.
+Security-protection blocks and stops brute-force attacks.
+[Want to read more how Security-protection plugin works](http://wordpress.org/plugins/security-protection/faq/)?
+
+Plugin is easy to use: just install it and it just works.
+
+Important: **delete 'admin' username** if you have it on your site. More than 90% of brute-force attacks try to crack the 'admin' username.
 
 Top 10 most commonly used and worst passwords. Do not use them:
 
@@ -29,10 +34,6 @@ Top 10 most commonly used and worst passwords. Do not use them:
 * admin123
 * iloveyou
 * letmein
-
-
-Plugin is easy to use: just install it and it just works.
-Need [more info about the plugin](http://wordpress.org/plugins/security-protection/faq/)?
 
 
 = Useful: =
@@ -52,7 +53,8 @@ Need [more info about the plugin](http://wordpress.org/plugins/security-protecti
 
 Plugin adds cookie on login screen and checks if this cookie exists in the POST request.
 If cookie does not exist than it is brute-force request and the login attempt is blocked even if username and password are correct.
-Plugin redirects the brute-force bot to admin section to emulate that the password is cracked and some brute-forcers stop their attacks after such redirect :)
+Plugin sends fake WordPress login cookies to the brute-force bot and redirects it to the admin section to emulate that the password is cracked and many brute-forcers stop their attacks after this.
+It is really awesome :)
 
 = How to test what brute-force attacks are blocked? =
 
@@ -61,6 +63,9 @@ Edit [security-protection.php](http://plugins.trac.wordpress.org/browser/securit
 
 
 == Changelog ==
+
+= 1.1 - 2014-03-01 =
+* add sending fake WordPress login cookies to fool the bot
 
 = 1.0 - 2014-02-25 =
 * initial release - Protect from login, register and reset-password brute-force attacks using cookie check
