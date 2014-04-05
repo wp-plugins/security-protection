@@ -1,7 +1,7 @@
 === Security-protection ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: brute-force, bruteforce, login, register, registration, reset-password, security, protection, protector, protect, block, bot, defender, guardian
+Tags: brute-force, bruteforce, login, register, registration, reset-password, form, security, protection, protect, block, bot
 Requires at least: 3.0
 Tested up to: 3.8.1
 Stable tag: 2.0
