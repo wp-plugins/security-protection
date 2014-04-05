@@ -1,14 +1,14 @@
 === Security-protection ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: brute-force, bruteforce, login, register, reset-password, security, protection, protector, protect, block, bot, defender, guardian
+Tags: brute-force, bruteforce, login, register, registration, reset-password, security, protection, protector, protect, block, bot, defender, guardian
 Requires at least: 3.0
 Tested up to: 3.8.1
 Stable tag: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Protection from login, register and reset-password brute-force attacks.
+Protection from login, registration and reset-password brute-force attacks. No captcha.
 
 == Description ==
 

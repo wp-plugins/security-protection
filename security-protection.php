@@ -2,7 +2,7 @@
 /*
 Plugin Name: Security-protection
 Plugin URI: http://wordpress.org/plugins/security-protection/
-Description: Protection from login, register and reset-password brute-force attacks.
+Description: Protection from login, registration and reset-password brute-force attacks. No captcha.
 Version: 2.0
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
