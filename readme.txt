@@ -57,7 +57,7 @@ Top 10 most commonly used and worst passwords. Do not use them:
 Two extra hidden fields are added to login, register and reset-password forms.
 First field is the invisible captcha (copy and paste the code). Second field should be empty.
 If the user visits site, than first field is answered automatically with javascript, second field left blank and both fields are hidden by javascript and css and invisible for the user.
-If the spammer tries to submit the form, he will make a mistake with answer on first field or tries to submit an empty field and brute-force attack will be automatically rejected.
+If the brute-forcer tries to submit the form, he will make a mistake with answer on first field or tries to submit an empty field and brute-force attack will be automatically rejected.
 
 = How does Security-protection plugin stop brute-force attacks? =
 
