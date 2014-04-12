@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: brute-force, bruteforce, login, register, registration, reset-password, form, security, protection, protect, block, bot
 Requires at least: 3.0
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -48,7 +48,7 @@ Top 10 most commonly used and worst passwords. Do not use them:
 == Installation ==
 
 1. install and activate the plugin on the Plugins page
-2. enjoy life without login and, register and reset-password brute-force attacks
+2. enjoy life without login, register and reset-password brute-force attacks
 
 == Frequently Asked Questions ==
 
