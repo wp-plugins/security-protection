@@ -15,6 +15,8 @@ Protection from login, registration and reset-password brute-force attacks. No c
 [Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page") |
 [Donate](http://web-profile.com.ua/donate/ "Support the development")
 
+**Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
+
 Security-protection blocks and stops brute-force attacks.
 [Want to read more how Security-protection plugin works](http://wordpress.org/plugins/security-protection/faq/)?
 
@@ -53,6 +55,12 @@ Top 10 most commonly used and worst passwords. Do not use them:
 == Frequently Asked Questions ==
 
 = How does Security-protection plugin work? =
+
+The blocking algorithm is based on 2 methods: 'invisible js-captcha' and 'invisible input trap'.
+The 'invisible js-captcha' method is based on fact that bots does not have javascript on their user-agents.
+The 'invisible input trap' method is based on fact that almost all the bots will fill inputs with name 'email' or 'url'.
+
+= How does Security-protection plugin work in details? =
 
 Two extra hidden fields are added to login, register and reset-password forms.
 First field is the invisible captcha (copy and paste the code). Second field should be empty.
