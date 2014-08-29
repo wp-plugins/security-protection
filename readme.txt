@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: brute-force, bruteforce, login, register, registration, reset-password, form, security, protection, protect, block, bot
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.0
+Tested up to: 4.0
+Stable tag: 2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,8 +12,9 @@ Protection from login, registration and reset-password brute-force attacks. No c
 
 == Description ==
 
-[Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page") |
-[Donate](http://web-profile.com.ua/donate/ "Support the development")
+**[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly "WordPress Pro plugins")** |
+**[Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page")** |
+**[Donate](http://web-profile.com.ua/donate/ "Support the development")**
 
 **Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
 
@@ -43,8 +44,8 @@ Top 10 most commonly used and worst passwords. Do not use them:
 
 = Useful: =
 * ["Anti-spam" - block spam in comments](http://wordpress.org/plugins/anti-spam/ "no spam, no captcha")
+* ["Anti-spam Pro"](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Anti-spam Pro")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
-* ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean and light theme")
 
 
 == Installation ==
@@ -78,8 +79,19 @@ It is really awesome :)
 You may enable sending info about blocked brute-force attacks to admin email.
 Edit [security-protection.php](http://plugins.trac.wordpress.org/browser/security-protection/trunk/security-protection.php) file and find "$secprot_send_brute_force_log_to_admin" and make it "true".
 
+= How to stop brute-force attacks if plugins does not help? =
+
+If all plugins does not help you to stop brute-force attacks - you can simply rename wp-login.php file (for example 'wp-login-new.php') for now and maybe this can help you to reduce load on your site.
+And also create empty wp-login.php file for not raising WordPress 404 error because it will start whole WordPress site again during each wp-login.php access.
+While wp-login.php renamed - users cannot login, register and reset password.
+If you want to have ability to login while you renamed wp-login.php file you should replace all 'wp-login.php' strings inside of the wp-login.php file to your new filename (for example 'wp-login-new.php').
 
 == Changelog ==
+
+= 2.1 - 2014-08-29 =
+* masking password in the email log for successful login
+* cleanup code
+* update FAQ
 
 = 2.0 - 2014-04-05 =
 * completely rewrote all the code and reorganize the logic of the plugin (now plugin adds two hidden fields - aka 'invisible js-captcha')
