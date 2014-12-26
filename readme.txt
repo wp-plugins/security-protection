@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: brute-force, bruteforce, login, register, registration, reset-password, form, security, protection, protect, block, bot
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,9 +12,9 @@ Protection from login, registration and reset-password brute-force attacks. No c
 
 == Description ==
 
-**[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly "WordPress Pro plugins")** |
-**[Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page")** |
-**[Donate](http://web-profile.com.ua/donate/ "Support the development")**
+> **[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)** |
+> **[Security-protection](http://web-profile.com.ua/wordpress/plugins/security-protection/ "Plugin page")** |
+> **[Donate](http://web-profile.com.ua/donate/ "Support the development")**
 
 **Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
 
@@ -44,8 +44,8 @@ Top 10 most commonly used and worst passwords. Do not use them:
 
 = Useful: =
 * ["Anti-spam" - block spam in comments](http://wordpress.org/plugins/anti-spam/ "no spam, no captcha")
-* ["Anti-spam Pro"](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Anti-spam Pro")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
+* [WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)
 
 
 == Installation ==
