@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: brute-force, bruteforce, login, register, registration, reset-password, form, security, protection, protect, block, bot
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 2.1
+Tested up to: 4.4
+Stable tag: 2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -55,6 +55,10 @@ Top 10 most commonly used and worst passwords. Do not use them:
 
 == Frequently Asked Questions ==
 
+= Compatible with: =
+
+* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
+
 = How does Security-protection plugin work? =
 
 The blocking algorithm is based on 2 methods: 'invisible js-captcha' and 'invisible input trap'.
@@ -87,6 +91,13 @@ While wp-login.php renamed - users cannot login, register and reset password.
 If you want to have ability to login while you renamed wp-login.php file you should replace all 'wp-login.php' strings inside of the wp-login.php file to your new filename (for example 'wp-login-new.php').
 
 == Changelog ==
+
+= 2.2 - 2015-06-01 =
+* added compatibility for WooCommerce
+* code cleanup
+* bugfixing
+* move javascript file to footer
+* added SECURITY_PROTECTION_VERSION constant
 
 = 2.1 - 2014-08-29 =
 * masking password in the email log for successful login
